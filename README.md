@@ -22,16 +22,8 @@ It analyzes movie attributes like **genres, keywords, cast, crew, and overview**
 2. Install dependencies:
 ```bash
 pip3 install pandas numpy scikit-learn
-Run the program:
-
-bash
-Copy code
 python3 recommender.py
-Type a movie name when prompted, or type exit to quit.
 
-Example
-mathematica
-Copy code
 Enter a movie name: Avatar
 
 🎬 Top 5 movies similar to 'Avatar':
@@ -40,9 +32,9 @@ Enter a movie name: Avatar
 👉 Star Trek
 👉 John Carter
 👉 Star Wars
+
+
 Example Code Snippet
-python
-Copy code
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -56,22 +48,5 @@ vectors = cv.fit_transform(movies['overview'].fillna('')).toarray()
 
 # Compute similarity
 similarity = cosine_similarity(vectors)
-Notes
-Ensure tmdb_5000_movies.csv and tmdb_5000_credits.csv are in the same folder as recommender.py.
 
-The system uses top 3 cast members and the director for more accurate recommendations.
 
-yaml
-Copy code
-
----
-
-### ✅ How to use this README
-1. Save it in your project folder as `README.md`.  
-2. Preview in VS Code: `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows).  
-3. Commit and push to GitHub:
-
-```bash
-git add README.md
-git commit -m "Add project README"
-git push
